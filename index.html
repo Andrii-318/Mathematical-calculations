@@ -8,46 +8,18 @@
     <title>Математичні операції</title>
   </head>
   <body>
-    <h1>Привіт, Костя!!!</h1>
+    <h1>Привіт!!!</h1>
     <script>
-      let number1 = parseFloat(prompt("Будь ласка, введіть перше число:"));
-      let number2 = parseFloat(prompt("Будь ласка, введіть друге число:"));
+      function calculateCircleArea(radius) {
+        return Math.PI * radius * radius;
+      }
+      const radius = prompt("Введіть радіус кола:");
+      const area = calculateCircleArea(radius);
 
-      if (isNaN(number1) || isNaN(number2)) {
-        alert("Будь ласка, введіть коректні числа!!!");
+      if (!isNaN(area)) {
+        alert(`Площа кола з радіусом ${radius} дорівнює ${area}.`);
       } else {
-        let sum = number1 + number2;
-        let difference = number1 - number2;
-        let product = number1 * number2;
-        let quotient = number1 / number2;
-
-        let result =
-          number1 +
-          " + " +
-          number2 +
-          " = " +
-          sum +
-          "\n" +
-          number1 +
-          " - " +
-          number2 +
-          " = " +
-          difference +
-          "\n" +
-          number1 +
-          " * " +
-          number2 +
-          " = " +
-          product +
-          "\n" +
-          number1 +
-          " / " +
-          number2 +
-          " = " +
-          quotient;
-
-        alert(result);
-        console.log(result);
+        alert("Введено некоректне значення радіуса.");
       }
     </script>
   </body>
