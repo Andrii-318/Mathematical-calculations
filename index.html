@@ -10,17 +10,53 @@
   <body>
     <h1>Привіт!!!</h1>
     <script>
+      // Функція для обчислення площі кола
       function calculateCircleArea(radius) {
         return Math.PI * radius * radius;
       }
-      const radius = prompt("Введіть радіус кола:");
-      const area = calculateCircleArea(radius);
 
-      if (!isNaN(area)) {
-        alert(`Площа кола з радіусом ${radius} дорівнює ${area}.`);
-      } else {
-        alert("Введено некоректне значення радіуса.");
+      // Функція для виконання математичних операцій
+      function performMathOperations() {
+        const number1 = parseFloat(
+          prompt("Введіть перше число для математичних операцій:")
+        );
+        const number2 = parseFloat(
+          prompt("Введіть друге число для математичних операцій:")
+        );
+
+        if (isNaN(number1) || isNaN(number2)) {
+          alert("Будь ласка, введіть дійсні числа.");
+          return;
+        }
+
+        const sum = number1 + number2;
+        const difference = number1 - number2;
+        const product = number1 * number2;
+        const quotient = number1 / number2;
+
+        const resultMessage =
+          `${number1} + ${number2} = ${sum}\n` +
+          `${number1} - ${number2} = ${difference}\n` +
+          `${number1} * ${number2} = ${product}\n` +
+          `${number1} / ${number2} = ${quotient.toFixed(2)}`;
+
+        alert(resultMessage);
       }
+
+      // Виклик функції для обчислення площі кола
+      let radius = prompt("Введіть радіус кола:");
+      if (radius) {
+        radius = parseFloat(radius);
+        if (!isNaN(radius)) {
+          let area = calculateCircleArea(radius);
+          alert(`Площа кола з радіусом ${radius} дорівнює ${area.toFixed(2)}.`);
+        } else {
+          alert("Введено некоректне значення радіуса.");
+        }
+      }
+
+      // Виклик функції для виконання математичних операцій
+      performMathOperations();
     </script>
   </body>
 </html>
