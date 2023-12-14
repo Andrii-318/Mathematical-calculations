@@ -10,12 +10,10 @@
   <body>
     <h1>Привіт!!!</h1>
     <script>
-      // Функція для обчислення площі кола
       function calculateCircleArea(radius) {
         return Math.PI * radius * radius;
       }
 
-      // Функція для виконання математичних операцій
       function performMathOperations() {
         const number1 = parseFloat(
           prompt("Введіть перше число для математичних операцій:")
@@ -43,7 +41,19 @@
         alert(resultMessage);
       }
 
-      // Виклик функції для обчислення площі кола
+      //  функція, що приймає будь-яку кількість аргументів
+      function performOperations(...numbers) {
+        const sum = numbers.reduce((a, b) => a + b, 0);
+        const difference = numbers.reduce((a, b) => a - b);
+        const product = numbers.reduce((a, b) => a * b, 1);
+        const quotient = numbers.reduce((a, b) => a / b);
+
+        console.log(`Сума: ${sum}`);
+        console.log(`Різниця: ${difference}`);
+        console.log(`Добуток: ${product}`);
+        console.log(`Частка: ${quotient.toFixed(2)}`);
+      }
+
       let radius = prompt("Введіть радіус кола:");
       if (radius) {
         radius = parseFloat(radius);
@@ -55,8 +65,10 @@
         }
       }
 
-      // Виклик функції для виконання математичних операцій
       performMathOperations();
+
+      //  функції з різною кількістю аргументів
+      performOperations(2, 2);
     </script>
   </body>
 </html>
